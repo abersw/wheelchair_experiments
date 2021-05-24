@@ -12,6 +12,7 @@ using namespace std;
 
 static const bool DEBUG_doesPkgExist = 0;
 static const bool DEBUG_roomsDacopToStruct = 0;
+static const bool DEBUG_roomListToStruct = 1;
 static const bool DEBUG_objectLocationsCallbackDictionary1 = 0;
 static const bool DEBUG_objectLocationsCallbackDictionary2 = 1;
 
@@ -33,6 +34,23 @@ struct ObjectDictionary {
 };
 struct ObjectDictionary objectDictionary[1000]; //struct for storing data needed to calc uniqueness of objects
 int totalObjectDictionaryStruct = 0; //total list of objects used to calc uniqueness
+
+struct Rooms {
+    int room_id;
+    string room_name;
+
+    float point_x; //get transform point x
+    float point_y; //get transform point y
+    float point_z; //get transform point z
+
+    float quat_x; //get transform rotation quaternion x
+    float quat_y; //get transform rotation quaternion y
+    float quat_z; //get transform rotation quaternion z
+    float quat_w; //get transform rotation quaternion w
+};
+int totalRoomsFileStruct = 0;
+//id,name,pointx,pointy,pointz,quatx,quaty,quatz,quatw
+struct Rooms roomsFileStruct[1000];
 
 //list of file locations
 std::string wheelchair_dump_loc;
@@ -130,6 +148,85 @@ void roomsDacopToStruct(std::string fileName) {
     totalObjectsFileStruct = objectNumber; //set total number of objects in struct to the lines(obstacles) counted
 }
 
+/**
+ * Take room list file and add it to struct array for processing later 
+ *
+ * @param parameter fileName is the path of the room.list file
+ */
+void roomListToStruct(std::string fileName) {
+    if (DEBUG_roomListToStruct) {
+        cout << "DEBUG_roomListToStruct" << endl;
+    }
+    //id, room name
+    std::string objectsDelimiter = ","; //delimiter character is comma
+	ifstream FILE_READER(fileName); //open file
+    int roomNumber = 0; //iterate on each object
+    if (FILE_READER.peek() == std::ifstream::traits_type::eof()) {
+        //don't do anything if next character in file is eof
+        cout << fileName << " file is empty" << endl;
+    }
+    else {
+        std::string line;
+        while (getline(FILE_READER, line)) { //go through line by line
+            int lineSection = 0; //var for iterating through serialised line
+            int pos = 0; //position of delimiter in line
+            std::string token;
+            while ((pos = line.find(objectsDelimiter)) != std::string::npos) {
+                token = line.substr(0, pos);
+                //std::cout << token << std::endl;
+                line.erase(0, pos + objectsDelimiter.length());
+                //deserialise the line sections below:
+                if (lineSection == 0) { //if first delimiter
+                    roomsFileStruct[roomNumber].room_id = std::stoi(token); //convert room id string to int
+                }
+                else if (lineSection == 1) {
+                    roomsFileStruct[roomNumber].room_name = token;
+                }
+                else if (lineSection == 2) {
+                    roomsFileStruct[roomNumber].point_x = std::stof(token); //set transform point x
+                }
+                else if (lineSection == 3) {
+                    roomsFileStruct[roomNumber].point_y = std::stof(token); //set transform point y
+                }
+                else if (lineSection == 4) {
+                    roomsFileStruct[roomNumber].point_z = std::stof(token); //set transform point z
+                }
+                else if (lineSection == 5) {
+                    roomsFileStruct[roomNumber].quat_x = std::stof(token); //set rotation to quaternion x
+                }
+                else if (lineSection == 6) {
+                    roomsFileStruct[roomNumber].quat_y = std::stof(token);//set rotation to quaternion y
+                }
+                else if (lineSection == 7) {
+                    roomsFileStruct[roomNumber].quat_z = std::stof(token); //set rotation to quaternion z
+                }
+                lineSection++; //move to next delimiter
+            }
+            roomsFileStruct[roomNumber].quat_w = std::stof(line); //set end of line to quat w
+
+            if (DEBUG_roomListToStruct) {
+                cout << 
+                roomsFileStruct[roomNumber].room_id << "," << 
+                roomsFileStruct[roomNumber].room_name << "," <<
+
+                roomsFileStruct[roomNumber].point_x << "," <<
+                roomsFileStruct[roomNumber].point_y << "," <<
+                roomsFileStruct[roomNumber].point_z << "," <<
+
+                roomsFileStruct[roomNumber].quat_x << "," <<
+                roomsFileStruct[roomNumber].quat_y << "," <<
+                roomsFileStruct[roomNumber].quat_z << "," <<
+                roomsFileStruct[roomNumber].quat_w << endl;
+            }
+            roomNumber++; //go to next room line
+        }
+    }
+    totalRoomsFileStruct = roomNumber; //set total number of rooms in struct to the lines(rooms) counted
+    if (DEBUG_roomListToStruct) {
+        cout << "total rooms in list are " << totalRoomsFileStruct << endl;
+    }
+}
+
 void getObjectInstances() {
     //create and add object names to object dictionary struct
     for (int isContext = 0; isContext < totalObjectsFileStruct; isContext++) {
@@ -209,6 +306,9 @@ int main(int argc, char** argv) {
     wheelchair_dump_loc = doesPkgExist("wheelchair_dump");//check to see if dump package exists
     rooms_dacop_loc = wheelchair_dump_loc + dump_dacop_loc + rooms_dacop_name; //concatenate vars to create location of rooms dacop file
     roomsDacopToStruct(rooms_dacop_loc);
+    
+    rooms_list_loc = wheelchair_dump_loc + dump_dacop_loc + rooms_list_name; //concatenate vars to create location of rooms list
+    roomListToStruct(rooms_list_loc);
 
     ros::init(argc, argv, "get_object_instances");
     ros::NodeHandle n;
