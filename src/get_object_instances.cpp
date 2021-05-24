@@ -232,36 +232,46 @@ void getObjectInstances() {
     for (int isContext = 0; isContext < totalObjectsFileStruct; isContext++) {
         //run through all objects
         int objectMatched = 0;
+        int roomMatched = 0;
         std::string getObjName = objectsFileStruct[isContext].object_name;
         if (totalObjectDictionaryStruct == 0) {
             objectDictionary[0].object_name = getObjName; //set object name in first element in full objects struct
+            objectDictionary[0].room_name = roomsFileStruct[0].room_name;
             totalObjectDictionaryStruct++; //add 1 to total objects in dictionary
         }
-        for (int isDict = 0; isDict < totalObjectDictionaryStruct; isDict++) {
-            std::string getObjDictName = objectDictionary[isDict].object_name;
-            if (getObjName == getObjDictName) {
-                objectMatched = 1;
+        for (int isRoom = 0; isRoom < totalRoomsFileStruct; isRoom++) {
+            std::string getRoomName = roomsFileStruct[isRoom].room_name;
+            for (int isDict = 0; isDict < totalObjectDictionaryStruct; isDict++) {
+                std::string getObjDictName = objectDictionary[isDict].object_name;
+                std::string getRoomDictName = objectDictionary[isDict].room_name;
+                if (getObjName == getObjDictName) {
+                    if (getRoomName == getRoomDictName) {
+                        objectMatched = 1;
+                    }
+                }
+                //set objects back to 0
+                objectDictionary[isDict].instances = 0;
             }
-            //set objects back to 0
-            objectDictionary[isDict].instances = 0;
-        }
-        if (objectMatched) {
-            //if object is already in struct, don't add anything
-        }
-        else {
-            //add object name to struct
-            objectDictionary[totalObjectDictionaryStruct].object_name = getObjName;
-            objectDictionary[totalObjectDictionaryStruct].instances = 0;
-            totalObjectDictionaryStruct++;
+            if (objectMatched) {
+                //if object is already in struct, don't add anything
+            }
+            else {
+                //add object name to struct
+                objectDictionary[totalObjectDictionaryStruct].object_name = getObjName;
+                objectDictionary[totalObjectDictionaryStruct].room_name = getRoomName;
+                objectDictionary[totalObjectDictionaryStruct].instances = 0;
+                totalObjectDictionaryStruct++;
+            }
         }
     }
     //print out list of objects
-    if (DEBUG_objectLocationsCallbackDictionary1) {
+    if (DEBUG_objectLocationsCallbackDictionary2) {
         printSeparator(1);
         cout << "pre-instance calculations, total size of struct is " << totalObjectDictionaryStruct << endl;
         for (int isDet = 0; isDet < totalObjectDictionaryStruct; isDet++) {
-            cout << objectDictionary[isDet].object_name << ":" << objectDictionary[isDet].instances << endl;
+            cout << objectDictionary[isDet].object_name << ":" << objectDictionary[isDet].room_name << ":" << objectDictionary[isDet].instances << endl;
         }
+        cout << "total number in dict is " << totalObjectDictionaryStruct << endl;
         printSeparator(1);
     }
 
