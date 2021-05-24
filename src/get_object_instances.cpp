@@ -268,9 +268,11 @@ void getObjectInstances() {
     //get object instances and assign to object dictionary struct
     for (int isDict = 0; isDict < totalObjectDictionaryStruct; isDict++) { //iterate through object dictionary
         std::string getObjDictName = objectDictionary[isDict].object_name; //get object name from dictionary
-        printSeparator(1);
-        cout << "total objects in dictionary is " << totalObjectDictionaryStruct << endl;
-        cout << "object from dict is " << getObjDictName << endl;
+        if (DEBUG_objectLocationsCallbackDictionary1) {
+            printSeparator(1);
+            cout << "total objects in dictionary is " << totalObjectDictionaryStruct << endl;
+            cout << "object from dict is " << getObjDictName << endl;
+        }
         for (int isContext = 0; isContext < totalObjectsFileStruct; isContext++) { //iterate through object struct
             std::string getObjName = objectsFileStruct[isContext].object_name; //get object name from main struct
             if (DEBUG_objectLocationsCallbackDictionary1) {
@@ -279,7 +281,9 @@ void getObjectInstances() {
                 cout << "object from context is " << getObjName << endl;
             }
             if (getObjDictName == getObjName) { //if object name in dictionary and main struct are equal
-            cout << "found instance" << endl;
+                if (DEBUG_objectLocationsCallbackDictionary1) {
+                    cout << "found instance" << endl;
+                }
                 objectDictionary[isDict].instances++; //add 1 to object instances
             }
             else {
