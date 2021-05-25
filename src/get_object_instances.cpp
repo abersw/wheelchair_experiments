@@ -237,7 +237,7 @@ void getObjectInstances() {
         //run through all objects
         int objectMatched = 0;
         std::string getObjName = objectsFileStruct[isContext].object_name;
-        if (totalObjectDictionaryStruct == 0) {
+        if (totalObjectDictionaryInstancesStruct == 0) {
             objectDictionaryInstances[0].object_name = getObjName; //set object name in first element in full objects struct
             totalObjectDictionaryInstancesStruct++; //add 1 to total objects in dictionary
         }
@@ -259,20 +259,47 @@ void getObjectInstances() {
             totalObjectDictionaryInstancesStruct++;
         }
     }
-
     //print out list of objects
     if (DEBUG_getObjectInstances3) {
         printSeparator(1);
         cout << "pre-instance calculations, total size of struct is " << totalObjectDictionaryInstancesStruct << endl;
-        for (int isDet = 0; isDet < totalObjectDictionaryStruct; isDet++) {
+        for (int isDet = 0; isDet < totalObjectDictionaryInstancesStruct; isDet++) {
             cout << objectDictionaryInstances[isDet].object_name << ":" << objectDictionaryInstances[isDet].instances << endl;
         }
         printSeparator(1);
     }
 
+    //get object instances and assign to object dictionary struct
+    for (int isDict = 0; isDict < totalObjectDictionaryInstancesStruct; isDict++) { //iterate through object dictionary
+        std::string getObjDictName = objectDictionaryInstances[isDict].object_name; //get object name from dictionary
+        //printSeparator(1);
+        //cout << "total objects in dictionary is " << totalObjectDictionaryStruct << endl;
+        //cout << "object from dict is " << getObjDictName << endl;
+        for (int isContext = 0; isContext < totalObjectsFileStruct; isContext++) { //iterate through object struct
+            std::string getObjName = objectsFileStruct[isContext].object_name; //get object name from main struct
+            //cout << "total objects in context is " << totalObjectContextStruct << endl;
+            //cout << "total objects in struct is " << totalObjectsFileStruct << endl;
+            //cout << "object from context is " << getObjName << endl;
+            if (getObjDictName == getObjName) { //if object name in dictionary and main struct are equal
+                //cout << "found instance" << endl;
+                objectDictionaryInstances[isDict].instances++; //add 1 to object instances
+            }
+            else {
+                //don't do anything if match not found between dictionary and main object struct
+            }
+        }
+    }
+    //print out list and instances of objects
+    if (DEBUG_getObjectInstances4) {
+        for (int isDict = 0; isDict < totalObjectDictionaryInstancesStruct; isDict++) {
+            cout << objectDictionaryInstances[isDict].object_name << ":" << objectDictionaryInstances[isDict].instances << endl;
+        }
+    }
+    cout << "end of instances" << endl;
+    printSeparator(0);
+}
 
-
-
+void getObjectRooomInstances() {
     for (int isContext = 0; isContext < totalObjectsFileStruct; isContext++) {
         //run through all objects
         int objectMatched = 0;
@@ -355,6 +382,7 @@ int main(int argc, char** argv) {
     ros::NodeHandle n;
 
     getObjectInstances();
+    getObjectRooomInstances();
 
     return 0;
 }
