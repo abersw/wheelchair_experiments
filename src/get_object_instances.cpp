@@ -267,6 +267,35 @@ void getObjectInstances() {
         }
         printSeparator(1);
     }
+
+    //get object instances and assign to object dictionary struct
+    for (int isDict = 0; isDict < totalObjectDictionaryStruct; isDict++) { //iterate through object dictionary
+        std::string getObjDictName = objectDictionary[isDict].object_name; //get object name from dictionary
+        std::string getRoomDictName = objectDictionary[isDict].room_name;
+        //printSeparator(1);
+        //cout << "total objects in dictionary is " << totalObjectDictionaryStruct << endl;
+        //cout << "object from dict is " << getObjDictName << endl;
+        for (int isContext = 0; isContext < totalObjectsFileStruct; isContext++) { //iterate through object struct
+            std::string getObjName = objectsFileStruct[isContext].object_name; //get object name from main struct
+            std::string getRoomName = objectsFileStruct[isContext].room_name;
+            //cout << "total objects in context is " << totalObjectContextStruct << endl;
+            //cout << "total objects in struct is " << totalObjectsFileStruct << endl;
+            //cout << "object from context is " << getObjName << endl;
+            if ((getObjDictName == getObjName) && (getRoomDictName == getRoomName)) { //if object name in dictionary and main struct are equal
+                //cout << "found instance" << endl;
+                objectDictionary[isDict].instances++; //add 1 to object instances
+            }
+            else {
+                //don't do anything if match not found between dictionary and main object struct
+            }
+        }
+    }
+    //print out list and instances of objects
+    if (DEBUG_getObjectInstances2) {
+        for (int isDict = 0; isDict < totalObjectDictionaryStruct; isDict++) {
+            cout << objectDictionary[isDict].object_name << ":" << objectDictionary[isDict].room_name << ":" << objectDictionary[isDict].instances << endl;
+        }
+    }
 }
 
 int main(int argc, char** argv) {
