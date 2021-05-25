@@ -15,6 +15,8 @@ static const bool DEBUG_roomsDacopToStruct = 0;
 static const bool DEBUG_roomListToStruct = 1;
 static const bool DEBUG_getObjectInstances1 = 0;
 static const bool DEBUG_getObjectInstances2 = 1;
+static const bool DEBUG_getObjectInstances3 = 0;
+static const bool DEBUG_getObjectInstances4 = 1;
 
 struct Objects {
     int object_id;
@@ -256,6 +258,16 @@ void getObjectInstances() {
             objectDictionaryInstances[totalObjectDictionaryInstancesStruct].instances = 0;
             totalObjectDictionaryInstancesStruct++;
         }
+    }
+
+    //print out list of objects
+    if (DEBUG_getObjectInstances3) {
+        printSeparator(1);
+        cout << "pre-instance calculations, total size of struct is " << totalObjectDictionaryInstancesStruct << endl;
+        for (int isDet = 0; isDet < totalObjectDictionaryStruct; isDet++) {
+            cout << objectDictionaryInstances[isDet].object_name << ":" << objectDictionaryInstances[isDet].instances << endl;
+        }
+        printSeparator(1);
     }
 
 
