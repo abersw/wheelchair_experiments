@@ -35,6 +35,9 @@ struct ObjectDictionary {
 struct ObjectDictionary objectDictionary[1000]; //struct for storing data needed to calc uniqueness of objects
 int totalObjectDictionaryStruct = 0; //total list of objects used to calc uniqueness
 
+struct ObjectDictionary objectDictionaryInstances[1000]; //struct for storing data needed to calc uniqueness of objects
+int totalObjectDictionaryInstancesStruct = 0; //total list of objects used to calc uniqueness
+
 struct Rooms {
     int room_id;
     string room_name;
@@ -228,6 +231,36 @@ void roomListToStruct(std::string fileName) {
 }
 
 void getObjectInstances() {
+    for (int isContext = 0; isContext < totalObjectsFileStruct; isContext++) {
+        //run through all objects
+        int objectMatched = 0;
+        std::string getObjName = objectsFileStruct[isContext].object_name;
+        if (totalObjectDictionaryStruct == 0) {
+            objectDictionaryInstances[0].object_name = getObjName; //set object name in first element in full objects struct
+            totalObjectDictionaryInstancesStruct++; //add 1 to total objects in dictionary
+        }
+        for (int isDict = 0; isDict < totalObjectDictionaryInstancesStruct; isDict++) {
+            std::string getObjDictName = objectDictionaryInstances[isDict].object_name;
+            if (getObjName == getObjDictName) {
+                objectMatched = 1;
+            }
+            //set objects back to 0
+            objectDictionaryInstances[isDict].instances = 0;
+        }
+        if (objectMatched) {
+            //if object is already in struct, don't add anything
+        }
+        else {
+            //add object name to struct
+            objectDictionaryInstances[totalObjectDictionaryInstancesStruct].object_name = getObjName;
+            objectDictionaryInstances[totalObjectDictionaryInstancesStruct].instances = 0;
+            totalObjectDictionaryInstancesStruct++;
+        }
+    }
+
+
+
+
     for (int isContext = 0; isContext < totalObjectsFileStruct; isContext++) {
         //run through all objects
         int objectMatched = 0;
