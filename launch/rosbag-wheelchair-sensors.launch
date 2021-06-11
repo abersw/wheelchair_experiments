@@ -4,8 +4,6 @@
       <node pkg="rosbag" type="record" name="rosbag_record_wheelchair"
             args="record --buffsize=0 -o $(arg bag_location) 
             /joint_states
-            /tf
-            /tf_static
             /scan
             /scan_filtered
             /wheelchair_robot/user/room_name
