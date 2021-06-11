@@ -4,43 +4,42 @@
       <node pkg="rosbag" type="record" name="rosbag_record_wheelchair"
             args="record --buffsize=10000 -o $(arg bag_location) 
             /joint_states
-/tf
-/tf_static
-/scan
-/scan_filtered
-/wheelchair_robot/user/room_name
-/zed_node/depth/camera_info
-/zed_node/depth/depth_registered
-/zed_node/depth/depth_registered/compressed
-/zed_node/depth/depth_registered/compressed/parameter_descriptions
-/zed_node/depth/depth_registered/compressed/parameter_updates
-/zed_node/depth/depth_registered/compressedDepth
-/zed_node/depth/depth_registered/compressedDepth/parameter_descriptions
-/zed_node/depth/depth_registered/compressedDepth/parameter_updates
-/zed_node/left/camera_info
-/zed_node/left/image_rect_color
-/zed_node/left/image_rect_color/compressed
-/zed_node/left/image_rect_color/compressed/parameter_descriptions
-/zed_node/left/image_rect_color/compressed/parameter_updates
-/zed_node/left/image_rect_color/compressedDepth
-/zed_node/left/image_rect_color/compressedDepth/parameter_descriptions
-/zed_node/left/image_rect_color/compressedDepth/parameter_updates
-/zed_node/odom
-/zed_node/parameter_descriptions
-/zed_node/parameter_updates
-/zed_node/path_map
-/zed_node/path_odom
-/zed_node/point_cloud/cloud_registered
-/zed_node/pose
-/zed_node/pose_with_covariance
-/zed_node/rgb/camera_info
-/zed_node/rgb/image_rect_color
-/zed_node/rgb/image_rect_color/compressed
-/zed_node/rgb/image_rect_color/compressed/parameter_descriptions
-/zed_node/rgb/image_rect_color/compressed/parameter_updates
-/zed_node/rgb/image_rect_color/compressedDepth
-/zed_node/rgb/image_rect_color/compressedDepth/parameter_descriptions
-/zed_node/rgb/image_rect_color/compressedDepth/parameter_updates
-" />
+            /tf
+            /tf_static
+            /scan
+            /scan_filtered
+            /wheelchair_robot/user/room_name
+            /zed_node/depth/camera_info
+            /zed_node/depth/depth_registered
+            /zed_node/depth/depth_registered/compressed
+            /zed_node/depth/depth_registered/compressed/parameter_descriptions
+            /zed_node/depth/depth_registered/compressed/parameter_updates
+            /zed_node/depth/depth_registered/compressedDepth
+            /zed_node/depth/depth_registered/compressedDepth/parameter_descriptions
+            /zed_node/depth/depth_registered/compressedDepth/parameter_updates
+            /zed_node/left/camera_info
+            /zed_node/left/image_rect_color
+            /zed_node/left/image_rect_color/compressed
+            /zed_node/left/image_rect_color/compressed/parameter_descriptions
+            /zed_node/left/image_rect_color/compressed/parameter_updates
+            /zed_node/left/image_rect_color/compressedDepth
+            /zed_node/left/image_rect_color/compressedDepth/parameter_descriptions
+            /zed_node/left/image_rect_color/compressedDepth/parameter_updates
+            /zed_node/odom
+            /zed_node/parameter_descriptions
+            /zed_node/parameter_updates
+            /zed_node/path_map
+            /zed_node/path_odom
+            /zed_node/point_cloud/cloud_registered
+            /zed_node/pose
+            /zed_node/pose_with_covariance
+            /zed_node/rgb/camera_info
+            /zed_node/rgb/image_rect_color
+            /zed_node/rgb/image_rect_color/compressed
+            /zed_node/rgb/image_rect_color/compressed/parameter_descriptions
+            /zed_node/rgb/image_rect_color/compressed/parameter_updates
+            /zed_node/rgb/image_rect_color/compressedDepth
+            /zed_node/rgb/image_rect_color/compressedDepth/parameter_descriptions
+            /zed_node/rgb/image_rect_color/compressedDepth/parameter_updates" />
 
 </launch>
