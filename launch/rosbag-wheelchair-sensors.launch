@@ -2,7 +2,7 @@
 <arg name="bag_location" />
 
       <node pkg="rosbag" type="record" name="rosbag_record_wheelchair"
-            args="record --buffsize=10000 -o $(arg bag_location) 
+            args="record --buffsize=0 -o $(arg bag_location) 
             /joint_states
             /tf
             /tf_static
