@@ -7,37 +7,21 @@
             /scan
             /scan_filtered
             /wheelchair_robot/user/room_name
-            /zed_node/depth/camera_info
-            /zed_node/depth/depth_registered
-            /zed_node/depth/depth_registered/compressed
-            /zed_node/depth/depth_registered/compressed/parameter_descriptions
-            /zed_node/depth/depth_registered/compressed/parameter_updates
-            /zed_node/depth/depth_registered/compressedDepth
-            /zed_node/depth/depth_registered/compressedDepth/parameter_descriptions
-            /zed_node/depth/depth_registered/compressedDepth/parameter_updates
-            /zed_node/left/camera_info
-            /zed_node/left/image_rect_color
-            /zed_node/left/image_rect_color/compressed
-            /zed_node/left/image_rect_color/compressed/parameter_descriptions
-            /zed_node/left/image_rect_color/compressed/parameter_updates
-            /zed_node/left/image_rect_color/compressedDepth
-            /zed_node/left/image_rect_color/compressedDepth/parameter_descriptions
-            /zed_node/left/image_rect_color/compressedDepth/parameter_updates
-            /zed_node/odom
-            /zed_node/parameter_descriptions
-            /zed_node/parameter_updates
-            /zed_node/path_map
-            /zed_node/path_odom
-            /zed_node/point_cloud/cloud_registered
-            /zed_node/pose
-            /zed_node/pose_with_covariance
-            /zed_node/rgb/camera_info
-            /zed_node/rgb/image_rect_color
-            /zed_node/rgb/image_rect_color/compressed
-            /zed_node/rgb/image_rect_color/compressed/parameter_descriptions
-            /zed_node/rgb/image_rect_color/compressed/parameter_updates
-            /zed_node/rgb/image_rect_color/compressedDepth
-            /zed_node/rgb/image_rect_color/compressedDepth/parameter_descriptions
-            /zed_node/rgb/image_rect_color/compressedDepth/parameter_updates" />
+            /zed/joint_states
+            /zed/zed_node/depth/camera_info
+            /zed/zed_node/depth/depth_registered
+            /zed/zed_node/disparity/disparity_image
+            /zed/zed_node/left/camera_info
+            /zed/zed_node/left/image_rect_color
+            /zed/zed_node/odom
+            /zed/zed_node/parameter_descriptions
+            /zed/zed_node/parameter_updates
+            /zed/zed_node/path_map
+            /zed/zed_node/path_odom
+            /zed/zed_node/point_cloud/cloud_registered
+            /zed/zed_node/pose
+            /zed/zed_node/pose_with_covariance
+            /zed/zed_node/stereo/image_rect_color
+            /zed/zed_node/stereo_raw/image_raw_color" />
 
 </launch>
