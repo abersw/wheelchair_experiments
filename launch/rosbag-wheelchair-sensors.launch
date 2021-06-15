@@ -3,6 +3,8 @@
 
       <node pkg="rosbag" type="record" name="rosbag_record_wheelchair"
             args="record --buffsize=0 -o $(arg bag_location) 
+            /tf
+            /tf_static
             /joint_states
             /scan
             /scan_filtered
@@ -10,7 +12,6 @@
             /zed/joint_states
             /zed/zed_node/depth/camera_info
             /zed/zed_node/depth/depth_registered
-            /zed/zed_node/disparity/disparity_image
             /zed/zed_node/left/camera_info
             /zed/zed_node/left/image_rect_color
             /zed/zed_node/odom
@@ -19,9 +20,6 @@
             /zed/zed_node/path_map
             /zed/zed_node/path_odom
             /zed/zed_node/point_cloud/cloud_registered
-            /zed/zed_node/pose
-            /zed/zed_node/pose_with_covariance
-            /zed/zed_node/stereo/image_rect_color
-            /zed/zed_node/stereo_raw/image_raw_color" />
+            /zed/zed_node/pose" />
 
 </launch>
