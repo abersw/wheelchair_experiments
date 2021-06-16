@@ -5,6 +5,8 @@
             args="record --buffsize=0 -o $(arg bag_location) 
             /joint_states
             /scan
+            /tf
+            /tf_static
             /scan_filtered
             /wheelchair_robot/user/room_name
             /zed/joint_states
