@@ -12,6 +12,8 @@
             /zed/zed_node/depth/depth_registered
             /zed/zed_node/left/camera_info
             /zed/zed_node/left/image_rect_color
+            /zed/zed_node/rgb/image_rect_color
+            /zed/zed_node/rgb/camera_info
             /zed/zed_node/odom
             /zed/zed_node/parameter_descriptions
             /zed/zed_node/parameter_updates
