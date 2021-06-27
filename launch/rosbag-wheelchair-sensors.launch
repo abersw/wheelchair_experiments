@@ -12,6 +12,7 @@
             /zed/joint_states
             /zed/zed_node/depth/camera_info
             /zed/zed_node/depth/depth_registered
+            /zed/zed_node/disparity/disparity_image
             /zed/zed_node/left/camera_info
             /zed/zed_node/left/image_rect_color
             /zed/zed_node/rgb/image_rect_color
