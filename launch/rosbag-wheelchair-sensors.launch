@@ -2,7 +2,7 @@
 <arg name="bag_location" />
 
       <node pkg="rosbag" type="record" name="rosbag_record_wheelchair"
-            args="record --buffsize=0 -o $(arg bag_location) 
+            args="record --buffsize=0 -tcpnodelay --chunksize=500 -o $(arg bag_location) 
             /tf
             /tf_static
             /joint_states
