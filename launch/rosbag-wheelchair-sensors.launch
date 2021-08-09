@@ -6,7 +6,6 @@
             /tf
             /tf_static
             /joint_states
-            /scan
             /scan_filtered
             /wheelchair_robot/user/room_name
             /zed/joint_states
