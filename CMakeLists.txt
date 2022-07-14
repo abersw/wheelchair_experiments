@@ -136,6 +136,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/wheelchair_experiments_node.cpp)
 add_executable(get_object_instances src/get_object_instances.cpp)
+add_executable(sandpit src/sandpit.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -152,6 +153,7 @@ add_executable(get_object_instances src/get_object_instances.cpp)
 #   ${catkin_LIBRARIES} 
 # )
 target_link_libraries(get_object_instances ${catkin_LIBRARIES})
+target_link_libraries(sandpit ${catkin_LIBRARIES})
 
 #############
 ## Install ##
