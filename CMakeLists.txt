@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   roslib
+  tof_tool
 )
 
 ## System dependencies are found with CMake's conventions
@@ -137,6 +138,7 @@ include_directories(
 # add_executable(${PROJECT_NAME}_node src/wheelchair_experiments_node.cpp)
 add_executable(get_object_instances src/get_object_instances.cpp)
 add_executable(sandpit src/sandpit.cpp)
+add_executable(context_score_to_veusz src/context_score_to_veusz.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -154,6 +156,7 @@ add_executable(sandpit src/sandpit.cpp)
 # )
 target_link_libraries(get_object_instances ${catkin_LIBRARIES})
 target_link_libraries(sandpit ${catkin_LIBRARIES})
+target_link_libraries(context_score_to_veusz ${catkin_LIBRARIES})
 
 #############
 ## Install ##

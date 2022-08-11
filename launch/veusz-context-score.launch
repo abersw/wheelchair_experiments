@@ -1,0 +1,9 @@
+<launch>
+<arg name="file" />
+
+<param name="/wheelchair_robot/context/track_name" value="$(arg file)" />
+<param name="/wheelchair_robot/context/track_file" value="$(find wheelchair_dump)/dump/bags/$(arg file).bag" />
+
+<node pkg="wheelchair_experiments" name="context_score_to_veusz" type="context_score_to_veusz" output="screen" launch-prefix=""></node>
+
+</launch>

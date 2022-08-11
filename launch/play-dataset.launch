@@ -1,8 +1,10 @@
 <launch>
 <arg name="file" />
+<arg name="add_to_duration" default="0" />
 
 <param name="/wheelchair_robot/context/track_name" value="$(arg file)" />
 <param name="/wheelchair_robot/context/track_file" value="$(find wheelchair_dump)/dump/bags/$(arg file).bag" />
+<param name="/wheelchair_robot/context/add_to_duration" value="$(arg add_to_duration)" />
 
       <node pkg="rosbag" type="play" name="rosbag_play_wheelchair" output="screen"
             args="--clock $(find wheelchair_dump)/dump/bags/$(arg file).bag" />
