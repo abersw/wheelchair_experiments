@@ -3,23 +3,23 @@
 400:teddy bear
 389:backpack
 14:bottle
-499:bottle
+106:bottle
 26:toilet
 54:refrigerator
 57:oven
 52:tv
-407:bottle
+406:bottle
 520:bottle
 515:laptop
 137:tv
 162:couch
 375:couch
 139:dining table
-562:laptop
+565:laptop
 548:bottle
 223:couch
 217:couch
-179:chair
+572:chair
 482:chair
 365:potted plant
-358:tv
+568:laptop
