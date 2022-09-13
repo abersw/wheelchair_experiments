@@ -15,11 +15,11 @@
 162:couch
 375:couch
 139:dining table
-565:laptop
-548:bottle
+568:laptop
+555:bottle
 223:couch
 217:couch
-572:chair
-482:chair
+574:chair
+582:chair
 365:potted plant
-568:laptop
+570:laptop
