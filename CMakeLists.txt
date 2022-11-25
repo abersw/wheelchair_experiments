@@ -10,6 +10,7 @@ project(wheelchair_experiments)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
+  bondcpp
   std_msgs
   roslib
   tof_tool
@@ -139,6 +140,7 @@ include_directories(
 # add_executable(${PROJECT_NAME}_node src/wheelchair_experiments_node.cpp)
 add_executable(get_object_instances src/get_object_instances.cpp)
 add_executable(sandpit src/sandpit.cpp)
+add_executable(bond_receive src/bond_receive.cpp)
 add_executable(context_score_to_veusz src/context_score_to_veusz.cpp)
 
 ## Rename C++ executable without prefix
@@ -157,6 +159,7 @@ add_executable(context_score_to_veusz src/context_score_to_veusz.cpp)
 # )
 target_link_libraries(get_object_instances ${catkin_LIBRARIES})
 target_link_libraries(sandpit ${catkin_LIBRARIES})
+target_link_libraries(bond_receive ${catkin_LIBRARIES})
 target_link_libraries(context_score_to_veusz ${catkin_LIBRARIES})
 
 #############
