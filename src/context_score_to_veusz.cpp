@@ -58,7 +58,7 @@ struct TrackingObjects {
     double object_score; //calculation of object weighting and uniqueness
     int object_instances; //number of objects in env
 };
-static const int totalObjectsTracked = 100;
+static const int totalObjectsTracked = 1100;
 static const long totalObjectsTrackedCaptured = 10000;
 //[0] contains object id and name [1] instances detected
 struct TrackingObjects trackingObjects[totalObjectsTracked][totalObjectsTrackedCaptured];
@@ -73,7 +73,10 @@ int totalTrackingObjectsListRaw = 0;
 std::string PARAM_dataset_name;
 std::string wheelchair_experiments_loc; //location of wheelchair_dump package
 std::string experiments_loc = "/docs/objects-to-track/"; //location of list of objects to tack
+std::string experiments_output_loc = "/docs/objects-to-track-output/";
 std::string experiments_loc_file;
+
+ofstream FILE_WRITER;
 
 void trackingFileToArray() {
     int counter = 0;
@@ -157,6 +160,7 @@ void buildImportPaths() {
                     " dssuffix='" + isID + "-" + isName + ".csv')";
 
         cout << importLine << endl;
+        FILE_WRITER << importLine << "\n";
     }
 }
 /*
@@ -202,6 +206,7 @@ void buildXY() {
                 "To('..')" + "\n";
 
         cout << xyLine << endl;
+        FILE_WRITER << xyLine << "\n";
     }
 }
 
@@ -228,22 +233,22 @@ int main (int argc, char **argv) {
         ROS_INFO("Got param: %s", PARAM_dataset_name.c_str());
         experiments_loc_file = wheelchair_experiments_loc + experiments_loc + PARAM_dataset_name + ".txt";
         cout << "experiments file is located at " << experiments_loc_file << endl;
+        
+        std::string outputListLoc = wheelchair_experiments_loc + experiments_output_loc + PARAM_dataset_name + ".txt";
+        tofToolBox->createFile(outputListLoc); //check to see if file is present, if not create a new one
+
+        FILE_WRITER.open(outputListLoc);
         trackingFileToArray();
         cout << "finished populating" << endl;
         populateObjectsToTrack();
         buildImportPaths();
         buildXY();
         //objectsToTrack = 1;
+        FILE_WRITER.close();
     }
     else {
         ROS_ERROR("Failed to get param '/wheelchair_robot/context/track_name'");
         //objectsToTrack = 0;
-    }
-
-    while(ros::ok()) {
-        
-        ros::spinOnce();
-        rate.sleep();
     }
 
     return 0;

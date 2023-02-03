@@ -1,25 +1,501 @@
-0:potted plant
-6:chair
-400:teddy bear
-389:backpack
-14:bottle
-106:bottle
-26:toilet
-54:refrigerator
-57:oven
-52:tv
-406:bottle
+563:bed
+76:oven
+529:bottle
+173:chair
+539:tv
+326:mouse
+172:couch
+99:laptop
+576:bottle
+505:bottle
+216:chair
+282:vase
+560:bottle
+551:chair
+486:bottle
+260:couch
+521:refrigerator
+23:vase
+447:tv
+427:vase
+55:tv
+361:potted plant
+10:chair
+104:chair
+252:potted plant
+482:chair
+348:vase
+526:couch
+14:bed
+434:bottle
+111:vase
+171:chair
+544:potted plant
+378:vase
+418:bottle
+297:bottle
+79:tv
+33:clock
+225:potted plant
+480:couch
+217:bed
+449:potted plant
+374:chair
+470:tv
+188:potted plant
+548:book
+170:chair
+331:toothbrush
+397:bottle
+192:laptop
+106:potted plant
+466:tv
+549:laptop
+90:cup
+11:oven
+74:sink
+322:oven
+56:toaster
+159:vase
+109:bottle
+61:oven
+364:book
+552:potted plant
+407:laptop
+372:chair
+286:bottle
+128:couch
+412:mouse
+213:bottle
+53:sink
+400:microwave
+265:couch
+333:book
+245:potted plant
+391:tv
+376:potted plant
+305:bottle
+373:chair
+177:couch
+176:chair
+18:bottle
+538:bottle
+49:chair
+441:couch
+25:toilet
+448:tie
+388:refrigerator
+553:laptop
+514:bottle
+458:vase
+423:banana
+16:oven
+266:chair
+174:couch
+122:book
+525:toaster
+198:couch
+382:handbag
+211:chair
+402:bottle
+328:vase
+203:teddy bear
+370:vase
+377:potted plant
+476:bed
+347:teddy bear
+469:chair
+175:couch
+371:potted plant
+571:chair
+196:couch
+110:vase
+197:chair
+440:teddy bear
+558:couch
+523:potted plant
+443:tv
+473:potted plant
+467:chair
+509:laptop
+293:sports ball
+285:chair
+165:bottle
+555:potted plant
+103:dining table
+417:refrigerator
+511:bottle
+451:vase
+199:potted plant
+323:oven
+507:bottle
+357:couch
+54:bottle
+300:bottle
+522:potted plant
+70:tv
+324:microwave
+150:chair
+118:toothbrush
+179:couch
+126:chair
+567:laptop
+283:vase
+88:bottle
 520:bottle
-515:laptop
-137:tv
-162:couch
-375:couch
-139:dining table
-568:laptop
-555:bottle
-223:couch
-217:couch
-574:chair
-582:chair
-365:potted plant
-570:laptop
+301:refrigerator
+445:clock
+536:bottle
+487:vase
+194:chair
+438:teddy bear
+288:tv
+413:couch
+459:potted plant
+554:potted plant
+318:microwave
+178:couch
+497:vase
+542:vase
+155:motorcycle
+208:potted plant
+93:tv
+358:potted plant
+120:bottle
+307:bottle
+107:vase
+562:bed
+431:microwave
+303:microwave
+13:tv
+352:chair
+513:microwave
+462:chair
+201:teddy bear
+383:backpack
+240:potted plant
+269:book
+399:refrigerator
+193:couch
+84:sink
+19:bed
+280:couch
+414:chair
+375:refrigerator
+394:chair
+69:tv
+259:book
+351:chair
+334:tv
+60:oven
+416:bottle
+436:teddy bear
+499:toilet
+304:oven
+2:teddy bear
+292:potted plant
+531:teddy bear
+100:dining table
+556:potted plant
+547:oven
+494:bench
+543:potted plant
+149:potted plant
+460:chair
+27:toilet
+461:couch
+22:toothbrush
+62:bottle
+311:potted plant
+500:bottle
+545:tv
+516:microwave
+58:bottle
+222:potted plant
+41:chair
+421:banana
+398:refrigerator
+528:chair
+184:tv
+255:couch
+299:refrigerator
+298:teddy bear
+506:tv
+131:chair
+313:microwave
+366:book
+315:vase
+67:tv
+86:refrigerator
+426:bottle
+390:knife
+182:couch
+254:couch
+151:dining table
+183:chair
+97:chair
+147:couch
+4:backpack
+291:couch
+228:car
+115:handbag
+550:tv
+355:potted plant
+205:bed
+517:microwave
+130:chair
+483:refrigerator
+8:tv
+306:bottle
+386:chair
+83:microwave
+420:mouse
+369:couch
+501:refrigerator
+221:couch
+85:bottle
+430:microwave
+422:sink
+43:oven
+249:car
+30:potted plant
+26:toilet
+162:cake
+50:chair
+468:potted plant
+5:refrigerator
+95:chair
+181:chair
+257:chair
+209:chair
+180:couch
+435:potted plant
+6:chair
+92:refrigerator
+442:tv
+21:bed
+384:chair
+132:chair
+565:potted plant
+356:tv
+133:couch
+65:tv
+510:bottle
+575:bottle
+146:bowl
+338:tv
+117:book
+7:tv
+57:refrigerator
+250:car
+330:bottle
+572:surfboard
+281:bed
+186:chair
+46:laptop
+493:potted plant
+226:couch
+335:tv
+512:tv
+290:vase
+227:chair
+289:potted plant
+564:teddy bear
+278:couch
+346:couch
+477:chair
+134:chair
+527:teddy bear
+73:tv
+143:couch
+343:dining table
+51:dining table
+561:chair
+485:bottle
+256:bed
+80:sink
+169:chair
+137:chair
+502:book
+475:couch
+518:microwave
+168:couch
+359:tv
+114:backpack
+223:laptop
+44:tv
+3:chair
+185:couch
+284:book
+45:dining table
+140:couch
+302:tv
+113:vase
+332:teddy bear
+474:couch
+136:chair
+235:car
+566:laptop
+354:tv
+89:bottle
+231:car
+503:laptop
+87:knife
+59:toilet
+253:chair
+294:handbag
+12:tv
+0:potted plant
+96:dining table
+309:cup
+317:bottle
+345:potted plant
+524:bottle
+68:dining table
+546:bed
+329:oven
+48:laptop
+72:chair
+454:vase
+568:vase
+532:bottle
+275:chair
+121:book
+274:book
+105:vase
+508:bottle
+71:cell phone
+530:vase
+141:dining table
+453:chair
+489:sports ball
+363:chair
+35:tv
+63:tv
+504:keyboard
+40:vase
+138:couch
+559:tv
+287:bottle
+296:tv
+452:potted plant
+166:couch
+573:refrigerator
+212:bottle
+108:potted plant
+533:couch
+200:potted plant
+37:sink
+362:chair
+350:potted plant
+1:refrigerator
+64:book
+277:chair
+419:cup
+425:potted plant
+439:bottle
+276:dining table
+82:refrigerator
+142:mouse
+478:couch
+496:teddy bear
+187:potted plant
+446:tv
+261:tv
+75:microwave
+403:sink
+415:bottle
+574:dining table
+349:tv
+327:potted plant
+189:chair
+214:potted plant
+238:car
+319:bottle
+320:refrigerator
+164:couch
+42:tv
+479:couch
+490:tv
+495:potted plant
+112:bottle
+450:chair
+91:bottle
+515:cup
+234:car
+17:sink
+360:chair
+139:tv
+519:toilet
+32:toilet
+428:bottle
+207:sheep
+34:book
+433:potted plant
+308:book
+367:chair
+437:knife
+206:couch
+392:vase
+77:tv
+258:couch
+314:microwave
+569:chair
+541:chair
+481:book
+31:refrigerator
+484:refrigerator
+491:bottle
+163:couch
+395:dining table
+102:knife
+157:bicycle
+457:couch
+540:tv
+321:oven
+456:chair
+336:tie
+557:toilet
+270:chair
+195:bed
+498:toothbrush
+271:couch
+379:potted plant
+9:chair
+424:sink
+310:chair
+15:bottle
+81:refrigerator
+229:car
+341:bottle
+52:laptop
+156:potted plant
+353:potted plant
+339:bottle
+488:bed
+535:chair
+119:book
+444:tv
+432:potted plant
+396:bottle
+537:tv
+295:bed
+404:tv
+387:refrigerator
+98:chair
+380:potted plant
+534:chair
+389:scissors
+204:sheep
+116:couch
+123:bed
+344:vase
+160:couch
+381:dining table
+20:vase
+492:tv
+161:chair
+401:laptop
+273:couch
+272:chair
+393:teddy bear
