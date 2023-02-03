@@ -5,6 +5,7 @@
 #include "ros/package.h" //find ROS packages, needs roslib dependency
 #include "std_msgs/String.h" //for room name topic
 #include "sensor_msgs/PointCloud2.h"
+#include "bondcpp/bond.h"
 
 #include <fstream>
 #include <iostream>
@@ -90,8 +91,22 @@ int main (int argc, char **argv) {
     ros::Publisher pub = n.advertise<sensor_msgs::PointCloud2>("wheelchair_robot/point_cloud_filter",100);
     pub_ptr = &pub;
 
+std::string id = "sandpit-bond";
+// Sends id to B using a service or action
+bond::Bond bond("/wheelchair_robot/bond/sandpit", id);
+bond.start();
+if (!bond.waitUntilFormed(ros::Duration(3.0)))
+{
+ROS_ERROR("ERROR!");
+return false;
+}
+// ... do things with B ...
+//bond.waitUntilBroken(ros::Duration(-1.0));
+//printf("B has broken the bond\n");
+
     while(ros::ok()) {
         
+
         
         ros::spinOnce();
         rate.sleep();
