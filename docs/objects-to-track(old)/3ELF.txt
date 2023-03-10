@@ -1,0 +1,24 @@
+0:potted plant
+6:chair
+400:teddy bear
+389:backpack
+106:bottle
+26:toilet
+54:refrigerator
+57:oven
+52:tv
+407:bottle
+309:bottle
+45:laptop
+137:tv
+162:couch
+375:couch
+139:dining table
+458:laptop
+454:vase
+223:couch
+217:couch
+179:chair
+482:chair
+239:potted plant
+483:tv
